@@ -1,0 +1,865 @@
+{
+	"folders": [
+		{
+			"name": "Inventory",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/home/jeffy/UnrealEngine"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Inventory Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Debug",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Debug",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Inventory Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Debug",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"DebugGame",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"DebugGame",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Inventory Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"DebugGame",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Development",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Development",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Inventory Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Development",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Test",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Test",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Inventory Linux Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Test",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Shipping",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Shipping",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Inventory Linux Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory Linux Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"Linux",
+					"Shipping",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Debug",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Debug",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Inventory LinuxArm64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Debug",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Inventory LinuxArm64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Development",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Development",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Inventory LinuxArm64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Development",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Test",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Test",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Inventory LinuxArm64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Test",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Shipping",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Shipping",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Inventory LinuxArm64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "Inventory LinuxArm64 Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"Inventory",
+					"LinuxArm64",
+					"Shipping",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "InventoryEditor Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"InventoryEditor",
+					"Linux",
+					"Debug",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "InventoryEditor Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"InventoryEditor",
+					"Linux",
+					"Debug",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"InventoryEditor Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "InventoryEditor Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"InventoryEditor",
+					"Linux",
+					"Debug",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "InventoryEditor Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"InventoryEditor",
+					"Linux",
+					"DebugGame",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "InventoryEditor Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"InventoryEditor",
+					"Linux",
+					"DebugGame",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"InventoryEditor Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "InventoryEditor Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"InventoryEditor",
+					"Linux",
+					"DebugGame",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "InventoryEditor Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"InventoryEditor",
+					"Linux",
+					"Development",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "InventoryEditor Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"InventoryEditor",
+					"Linux",
+					"Development",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"InventoryEditor Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			},
+			{
+				"label": "InventoryEditor Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"InventoryEditor",
+					"Linux",
+					"Development",
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/jeffy/UnrealEngine"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch Inventory (Debug)",
+				"request": "launch",
+				"program": "/home/jeffy/Documents/UnrealProjects/Inventory/Binaries/Linux/Inventory-Linux-Debug",
+				"preLaunchTask": "Inventory Linux Debug Build",
+				"args": [
+				],
+				"cwd": "/home/jeffy/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/jeffy/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch Inventory (DebugGame)",
+				"request": "launch",
+				"program": "/home/jeffy/Documents/UnrealProjects/Inventory/Binaries/Linux/Inventory-Linux-DebugGame",
+				"preLaunchTask": "Inventory Linux DebugGame Build",
+				"args": [
+				],
+				"cwd": "/home/jeffy/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/jeffy/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch Inventory (Development)",
+				"request": "launch",
+				"program": "/home/jeffy/Documents/UnrealProjects/Inventory/Binaries/Linux/Inventory",
+				"preLaunchTask": "Inventory Linux Development Build",
+				"args": [
+				],
+				"cwd": "/home/jeffy/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/jeffy/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch Inventory (Test)",
+				"request": "launch",
+				"program": "/home/jeffy/Documents/UnrealProjects/Inventory/Binaries/Linux/Inventory-Linux-Test",
+				"preLaunchTask": "Inventory Linux Test Build",
+				"args": [
+				],
+				"cwd": "/home/jeffy/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/jeffy/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch Inventory (Shipping)",
+				"request": "launch",
+				"program": "/home/jeffy/Documents/UnrealProjects/Inventory/Binaries/Linux/Inventory-Linux-Shipping",
+				"preLaunchTask": "Inventory Linux Shipping Build",
+				"args": [
+				],
+				"cwd": "/home/jeffy/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/jeffy/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch InventoryEditor (Debug)",
+				"request": "launch",
+				"program": "/home/jeffy/UnrealEngine/Engine/Binaries/Linux/UnrealEditor-Linux-Debug",
+				"preLaunchTask": "InventoryEditor Linux Debug Build",
+				"args": [
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject"
+				],
+				"cwd": "/home/jeffy/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/jeffy/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch InventoryEditor (DebugGame)",
+				"request": "launch",
+				"program": "/home/jeffy/UnrealEngine/Engine/Binaries/Linux/UnrealEditor-Linux-DebugGame",
+				"preLaunchTask": "InventoryEditor Linux DebugGame Build",
+				"args": [
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject"
+				],
+				"cwd": "/home/jeffy/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/jeffy/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch InventoryEditor (Development)",
+				"request": "launch",
+				"program": "/home/jeffy/UnrealEngine/Engine/Binaries/Linux/UnrealEditor",
+				"preLaunchTask": "InventoryEditor Linux Development Build",
+				"args": [
+					"/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject"
+				],
+				"cwd": "/home/jeffy/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/jeffy/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Linux Development Build",
+				"program": "/home/jeffy/UnrealEngine/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/home/jeffy/Documents/UnrealProjects/Inventory/Inventory.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/home/jeffy/UnrealEngine"
+			}
+		]
+	}
+}
