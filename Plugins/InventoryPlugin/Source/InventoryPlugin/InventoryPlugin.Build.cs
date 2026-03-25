@@ -25,7 +25,7 @@ public class InventoryPlugin : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core",
+				"Core", "Widgets", "UMG"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -37,7 +37,9 @@ public class InventoryPlugin : ModuleRules
 				"CoreUObject",
 				"Engine",
 				"Slate",
-				"SlateCore", "EnhancedInput",
+				"SlateCore", 
+				"EnhancedInput",
+				"Widgets"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

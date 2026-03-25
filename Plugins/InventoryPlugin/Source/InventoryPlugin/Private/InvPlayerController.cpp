@@ -5,6 +5,8 @@
 
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "InventoryPlugin.h"
+#include "Blueprint/UserWidget.h"
 
 void AInvPlayerController::BeginPlay()
 {
@@ -14,6 +16,7 @@ void AInvPlayerController::BeginPlay()
 	{
 		Subsystem->AddMappingContext(DefaultIMC, 0);
 	}
+	CreateHUDWidget();
 }
 
 void AInvPlayerController::SetupInputComponent()
@@ -27,5 +30,18 @@ void AInvPlayerController::SetupInputComponent()
 
 void AInvPlayerController::PrimaryInteract()
 {
-	UE_LOG(LogTemp, Warning, TEXT("PrimaryInteract"));
+	UE_LOG(InventoryPluginLog, Warning, TEXT("PrimaryInteract"));
+}
+
+void AInvPlayerController::CreateHUDWidget()
+{
+	if (!IsLocalController())
+	{
+		return;
+	}
+	HUDWidget = CreateWidget<UHUDWidget>(this, HUDWidgetClass);
+	if (IsValid(HUDWidget))
+	{
+		HUDWidget->AddToViewport();
+	}
 }

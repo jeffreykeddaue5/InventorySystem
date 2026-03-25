@@ -19,6 +19,11 @@
 			"Name": "InventoryPlugin",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "Widgets",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
 		}
 	]
 }
