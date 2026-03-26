@@ -7,6 +7,20 @@
 #include "EnhancedInputSubsystems.h"
 #include "InventoryPlugin.h"
 #include "Blueprint/UserWidget.h"
+#include "Kismet/GameplayStatics.h"
+
+
+AInvPlayerController::AInvPlayerController()
+{
+	PrimaryActorTick.bCanEverTick = true;
+	TraceLength = 500.0;
+}
+
+void AInvPlayerController::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+	TraceItem();
+}
 
 void AInvPlayerController::BeginPlay()
 {
@@ -44,4 +58,36 @@ void AInvPlayerController::CreateHUDWidget()
 	{
 		HUDWidget->AddToViewport();
 	}
+}
+
+void AInvPlayerController::TraceItem()
+{
+	if (!IsValid(GEngine) || !IsValid(GEngine->GameViewport)) return; 
+	FVector2D ViewportSize;
+	GEngine->GameViewport->GetViewportSize(ViewportSize);
+	const FVector2D ViewportCenter = ViewportSize / 2.f;
+	
+	FVector TraceStart;
+	FVector Forward;
+	
+	if (!UGameplayStatics::DeprojectScreenToWorld(this, ViewportCenter, TraceStart, Forward)) return;
+	
+	const FVector TraceEnd = TraceStart + Forward * TraceLength;
+	FHitResult HitResult;
+	GetWorld()->LineTraceSingleByChannel(HitResult, TraceStart, TraceEnd, ItemTraceChannel);
+	
+	PreviousActor = CurrentActor;
+	CurrentActor = HitResult.GetActor();
+	
+	if (CurrentActor == PreviousActor) return;
+	
+	if (CurrentActor.IsValid())
+	{
+		UE_LOG(InventoryPluginLog, Display, TEXT("CurrentActor: %s"), *CurrentActor->GetName());
+	}
+	if (PreviousActor.IsValid())
+	{
+		UE_LOG(InventoryPluginLog, Display, TEXT("PreviousActor: %s"),  *PreviousActor->GetName());
+	}
+	
 }

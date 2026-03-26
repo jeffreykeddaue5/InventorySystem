@@ -18,6 +18,9 @@ class INVENTORYPLUGIN_API AInvPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 	
+public:
+	AInvPlayerController();
+	virtual void Tick(float DeltaSeconds) override;
 protected:
 	
 	virtual void BeginPlay() override;
@@ -25,6 +28,7 @@ protected:
 private:
 	void PrimaryInteract();
 	void CreateHUDWidget();
+	void TraceItem();
 	
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Inventory")
@@ -38,5 +42,17 @@ private:
 	
 	UPROPERTY()
 	TObjectPtr<UHUDWidget> HUDWidget;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Inventory")
+	double TraceLength;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Inventory")
+	TEnumAsByte<ECollisionChannel> ItemTraceChannel;
+	
+	TWeakObjectPtr<AActor> CurrentActor;
+	
+	TWeakObjectPtr<AActor> PreviousActor;
+	
+	
 	
 };
