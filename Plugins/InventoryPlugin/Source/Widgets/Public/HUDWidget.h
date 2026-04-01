@@ -13,4 +13,13 @@ UCLASS()
 class WIDGETS_API UHUDWidget : public UUserWidget
 {
 	GENERATED_BODY()
+	
+public:
+	
+	UFUNCTION(BlueprintImplementableEvent, Category="Inventory")
+	void ShowPickUpMessage(const FString& Message);
+
+	UFUNCTION(BlueprintImplementableEvent, Category="Inventory")
+	void HidePickUpMessage();
+	
 };

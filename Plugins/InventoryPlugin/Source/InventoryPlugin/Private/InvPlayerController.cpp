@@ -6,6 +6,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InventoryPlugin.h"
+#include "ItemComponent.h"
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -14,6 +15,7 @@ AInvPlayerController::AInvPlayerController()
 {
 	PrimaryActorTick.bCanEverTick = true;
 	TraceLength = 500.0;
+	ItemTraceChannel = ECC_GameTraceChannel1;
 }
 
 void AInvPlayerController::Tick(float DeltaSeconds)
@@ -79,12 +81,22 @@ void AInvPlayerController::TraceItem()
 	PreviousActor = CurrentActor;
 	CurrentActor = HitResult.GetActor();
 	
+	if (!CurrentActor.IsValid())
+	{
+		if (IsValid(HUDWidget)) HUDWidget->HidePickUpMessage();	
+	}
+	
 	if (CurrentActor == PreviousActor) return;
 	
 	if (CurrentActor.IsValid())
 	{
+		UItemComponent * ItemComponent = CurrentActor->FindComponentByClass<UItemComponent>();
+		if (!IsValid(ItemComponent)) return;
+		
+		if (IsValid(HUDWidget)) HUDWidget->ShowPickUpMessage(ItemComponent->GetPickUpMessage());
 		UE_LOG(InventoryPluginLog, Display, TEXT("CurrentActor: %s"), *CurrentActor->GetName());
 	}
+	
 	if (PreviousActor.IsValid())
 	{
 		UE_LOG(InventoryPluginLog, Display, TEXT("PreviousActor: %s"),  *PreviousActor->GetName());
