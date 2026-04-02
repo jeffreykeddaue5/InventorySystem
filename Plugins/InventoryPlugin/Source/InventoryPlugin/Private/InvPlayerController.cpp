@@ -5,6 +5,7 @@
 
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "Highlightable.h"
 #include "InventoryPlugin.h"
 #include "ItemComponent.h"
 #include "Blueprint/UserWidget.h"
@@ -90,15 +91,29 @@ void AInvPlayerController::TraceItem()
 	
 	if (CurrentActor.IsValid())
 	{
+		UActorComponent * Highlightable = CurrentActor->FindComponentByInterface(UHighlightable::StaticClass());
+		if (IsValid(Highlightable))
+		{
+			IHighlightable::Execute_Highlight(Highlightable);	
+		}
+		
 		UItemComponent * ItemComponent = CurrentActor->FindComponentByClass<UItemComponent>();
 		if (!IsValid(ItemComponent)) return;
 		
 		if (IsValid(HUDWidget)) HUDWidget->ShowPickUpMessage(ItemComponent->GetPickUpMessage());
 		UE_LOG(InventoryPluginLog, Display, TEXT("CurrentActor: %s"), *CurrentActor->GetName());
+		
 	}
 	
 	if (PreviousActor.IsValid())
 	{
+		
+		UActorComponent * UnHighlightable = PreviousActor->FindComponentByInterface(UHighlightable::StaticClass());
+		if (IsValid(UnHighlightable))
+		{
+			IHighlightable::Execute_UnHighlight(UnHighlightable);	
+		}
+		
 		UE_LOG(InventoryPluginLog, Display, TEXT("PreviousActor: %s"),  *PreviousActor->GetName());
 	}
 	

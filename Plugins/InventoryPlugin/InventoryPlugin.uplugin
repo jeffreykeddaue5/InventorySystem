@@ -24,6 +24,11 @@
 			"Name": "Widgets",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "ItemManagement",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
 		}
 	]
 }
