@@ -9,7 +9,7 @@ public class ItemManagement : ModuleRules
         PublicDependencyModuleNames.AddRange(
             new string[]
             {
-                "Core",
+                "Core", "Widgets"
             }
         );
 
@@ -19,7 +19,7 @@ public class ItemManagement : ModuleRules
                 "CoreUObject",
                 "Engine",
                 "Slate",
-                "SlateCore"
+                "SlateCore", "Widgets", "UMG"
             }
         );
     }
