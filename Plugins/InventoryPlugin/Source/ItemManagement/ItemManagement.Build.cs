@@ -19,7 +19,9 @@ public class ItemManagement : ModuleRules
                 "CoreUObject",
                 "Engine",
                 "Slate",
-                "SlateCore", "Widgets", "UMG"
+                "SlateCore",
+                "Widgets", 
+                "UMG"
             }
         );
     }

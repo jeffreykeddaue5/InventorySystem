@@ -16,6 +16,8 @@ class ITEMMANAGEMENT_API UInventoryComponent : public UActorComponent
 
 public:
 	UInventoryComponent();
+	
+	void ToggleInventoryMenu();
 
 protected:
 	virtual void BeginPlay() override;
@@ -30,6 +32,10 @@ private:
 	
 	UPROPERTY(EditAnywhere, Category = "Inventory" )
 	TSubclassOf<UInventoryBase> InventoryMenuClass;
+	
+	bool bInventoryMenuOpen;
+	void OpenInventoryMenu();
+	void CloseInventoryMenu();
 	
 	
 };
