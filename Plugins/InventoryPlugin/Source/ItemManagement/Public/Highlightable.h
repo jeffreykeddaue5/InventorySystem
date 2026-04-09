@@ -20,8 +20,12 @@ class ITEMMANAGEMENT_API IHighlightable
 	GENERATED_BODY()
 
 public:
+	// If a function is declared in a UE interface as blueprintNative Event
+	// or BlueprintImplementableEvent, prefix Execute
 	UFUNCTION(BlueprintNativeEvent, Category = "Inventory")
 	void Highlight();
 	UFUNCTION(BlueprintNativeEvent, Category = "Inventory")
 	void UnHighlight();
+	// U-class = identification, "Does this object support this interface?"
+	// I-class = execution, "Call the interface function"
 };

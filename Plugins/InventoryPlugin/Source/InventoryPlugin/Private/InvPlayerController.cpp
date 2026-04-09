@@ -103,9 +103,12 @@ void AInvPlayerController::TraceItem()
 	
 	if (CurrentActor.IsValid())
 	{
+		// Gets UHighlightableStaticMesh inherits IHighlightable, overrides Highlight/UnHiglight
+		// Unreal is checking if Highlightable interface is implemented via reflection system
 		UActorComponent * Highlightable = CurrentActor->FindComponentByInterface(UHighlightable::StaticClass());
 		if (IsValid(Highlightable))
 		{
+			// Execute because the function might be implemented in blueprint/Unreal routes the call safely through reflection
 			IHighlightable::Execute_Highlight(Highlightable);	
 		}
 		
